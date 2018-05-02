@@ -1,0 +1,272 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = it-IT
+
+%************************************************
+
+%************************************************
+
+Users' interactions with chatbots often mimic interactions between humans, but there are differences. In a study comparing human–human interactions to human– chatbot interactions, Hill et al. found that human–chatbot interactions tend to last longer than human–human interactions between strangers and involve shorter messages, less complicated vocabulary, and more profanity \cite{hill2015}.
+Corti and Gillespie investigated whether users seek to repair misunderstandings in conversations with natural language user interfaces, which is important in any type of dialogue \cite{corti2016}. They found that, for chatbots perceived as human, users made more of an effort to repair misunderstandings than did users that perceived the chatbots as automated.
+Several studies have investigated users’ experiences with chatbots. For example, Holtgraves et al. explored how users perceive chatbots’ personalities \cite{holtgraves2007}, and De Angeli et al. studied how the implied anthropomorphism of chatbots may elicit negative responses among users \cite{deangeli2001}. It may be important for chatbots to engage emotionally with users. A recent study by Xu et al. on customer service chatbots found that about 40\% of user requests to customer service are emotional rather than seeking specific information \cite{xu2017}. Without the ability to relate to these customers emotionally, a customer service chatbot risks failure.
+
+\section {General} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In their study, Tatai et al. \cite{tatai2003} compared implementations of chatbots and identified three main roles of chatbots, namely:
+
+\begin{itemize}
+\item Role of a Digital Assistant;
+\item Role of an Information Provider;
+\item Role of a General Chatbot
+\end{itemize}
+
+Examples of digital assistant chatbots are from IKEA, which was launched in 2005 and Niki.ai which helps you shop through chat. Chatbots can be used to improve the communication between doctor-patient (DP) and clinic-patient (CP). The researchers claim that using chatbots for this purpose (DP and CP communication) could reduce costs and time on routine operations \cite{abashev2017}. More implementations of chatbots are: credit score coach, personal stylist, food orderer, personal concierge, doctor, pension or finance advisor, teacher, newsreader, toy, accountant.
+% * <siciliani.lu@gmail.com> 2018-04-06T16:19:46.424Z:
+% 
+% > 1
+% ?
+% 
+% ^.
+
+Chatbots can be found in different domains such as: customer service, e-commerce, insurance, healthcare, retail and more. 95\% of the respondents of a chatbot survey believed that the customer service domain is going to be ’the major beneficiary of chatbots'.
+
+An example of a chatbot implementation in the financial field is K2 Bank. This chatbot checks your balance, your recent history of transactions and can make simple money transfers \cite{k2bot}.
+
+Human-system dialogues consists of the inquirer (the user), looking for information, and the expert (system), providing information. There are two ways in which chatbots can converse with users. System-initiated chatbots, where the system leads the conversation, and user-initiated chatbots, where the user leads the conversation. Systems that contain both methods of initiation, are called mixed initiative systems \cite{hung2009}
+% * <siciliani.lu@gmail.com> 2018-04-06T16:22:52.383Z:
+% 
+% > that
+% in which
+% 
+% ^.
+% * <siciliani.lu@gmail.com> 2018-04-06T16:21:01.367Z:
+% 
+% > dialogue
+% "dialogues" (vedere poi le concordanze con i verbi successivi)
+% 
+% ^.
+
+To understand how a conversational interface should be represented, it is important to investigate how human dialogues work. Quarteroni, et al. \cite{quarteroni2009} researched the aspects and issues related to human dialogues and they proposed a list of essential items for an interactive question answering system:
+% * <siciliani.lu@gmail.com> 2018-04-06T16:24:16.002Z:
+% 
+% > question and answering
+% question answering
+% 
+% ^.
+% * <siciliani.lu@gmail.com> 2018-04-06T16:23:59.662Z:
+% 
+% > item
+% items
+% 
+% ^.
+
+\begin{itemize}
+\item \textbf{Context Maintenance}: utilizing the context of the conversation to correctly interpret the user’s input. This is important for follow-up questions, or for clarification.
+% * <siciliani.lu@gmail.com> 2018-04-06T16:24:44.243Z:
+% 
+% > utilising
+% utilizing
+% 
+% ^.
+\item \textbf{Utterance Understanding}: the detection of follow-up and clarification within the context of the previous conversation.
+\item \textbf{Mixed Initiative}: the user should be able to take initiative within the conversation (by quitting, or asking questions).
+\item \textbf{Follow-up Proposal}: meaning that the system motivates the user to give feedback on the answers that the system gives (if the user is satisfied or not). Until the user has achieved his or her goal.
+\item \textbf{Natural Interaction}: covering and generating a variety of utterances to create a smooth conversation and to keep the dialogue active.
+\end{itemize}
+
+McTear \cite{mctear2016} reviewed key features of conversation in chapter 3 of his book on conversational interfaces. He describes that the following aspects are important when designing conversational interfaces:
+
+\begin{itemize}
+\item \textbf{Conversation as action}: meaning that utterances of users could be seen as actions that speakers carry out to achieve a goal.
+\item \textbf{The structure of conversation}: regarding how utterances from a conversation relate to each other. Examples of ways to recognize structure in dialog acts can include adjacency pairs, exchanges, discourse segments and conversational games.
+\item \textbf{Conversation as a joint activity}: describes how two parties take turns and reduce the risk of a miscommunication by using the grounding process in their conversation.
+\item \textbf{Conversational repair}: a repairing process that can be initiated by one of the two parties in the conversation. Sometimes the speaker repairs his own utterances before the receiver has time to repair it.
+\item \textbf{The language of conversation}: the tone of voice in a spoken text can be a way to convey additional information, such as emotions and affect. For example, when persons raise their voice when they are angry. For written text, emotions and affect can also be conveyed, for example by using emoticons or capital letters.
+\end{itemize}
+
+Incremental processing is an important process in human to human conversation. Incremental processing means that overlap occurs within a conversation. In human-machine interaction, a latency between turns is present. This is one reason why human-computer interaction can sometimes feel less natural than human to human interaction. Another benefit of incremental processing is that the dialog becomes more fluent and efficient \cite{mctear2016}. Google search applies incremental processing by completing the user’s query during typing and in Voice Search by showing the recognised words while the user is still speaking.
+
+
+
+
+\section{Dialogue Management Strategy} %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+McTear \cite{mctear2016} describes that one of the core aspects of conversational interfaces is the design of the dialogue management strategy, in which the system’s conversational behaviour is defined. The design of dialogue management strategy was done manually in the past, but the research community has found ways to automate this process by training the model with real conversations (McTear et al., 2016). Two arising design strategies of dialogues in chatbots are the interaction strategy and the choice of a confirmation strategy (McTear et al., 2016). Automatic speech recognition is not always accurate, but by asking the user for confirmation or reprompt them, some errors could be avoided. Too many confirmation asking can also be annoying. There are three types of interaction strategies in chatbots, namely: user-initiated, system-initiated or mixed initiative. Limitations of user-initiated dialogues are errors in speech recognition and understanding, since users can say anything they want. The limitation of system-initiated dialogues, is that the user’s input is limited, but the advantage is that the interaction is more efficient. 
+
+The advantage of a mixed-initiated dialogue is that the system can guide the user, but the user is also free to say anything he wants and take initiative, ask questions and introduce new topics. The limitations are that the system has to be technically advanced to keep track of his own structure/agenda, understand and answer the user’s utterances correctly and remember the relevant information said. Confirmation strategies are strategies to prevent errors in recognition and understanding of the user’s utterances. The disadvantage of using these confirmations is that it can make the interaction inefficient, repetitive and lengthy which can eventually lead to a frustrating user experience. 
+
+A solution for these problems, is to create implicit confirmations. In this way, the user’s input is used in the next system’s output and extra information is added. To clarify the difference between implicit and explicit confirmation, we give the following example. When the user says the price of the house he wants to buy is \euro180.000, the system could say: "So the house you want to buy is \euro180.000 ?", which is an explicit confirmation. An implicit confirmation of the system would be: "So the house you want to buy costs \euro180.000. How much will an optional refurbishment add to the costs ?". A limitation of implicit confirmation strategy is that the user is responsible for correcting the system when it did not recognize the user’s utterances correctly \cite{mctear2016}
+
+
+
+\section{Guidelines} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Personality by design}
+The chatbot personality is what gives the feeling of a natural conversation with an individual and comfort in the conversation. Designing the appropriate personality can increase the user experience and engagement with the bot. Personality is the tone the bot takes in a conversation. For example, if the bot is intended for ecommerce, then the bot personality should cover features, such as understanding the context of the conversation, is the user browsing or looking for specific information. Moreover, personality also includes knowing what the user might ask for and what the bot can’t offer. There is no one-size-fits-all approach when it comes to designing the correct conversation flow and currently there are no patterns that work for all cases. Most bots lack the structure to steer a conversation from the beginning to the end. Bots personality has to defines steps to guide user to learn and manage their intention. The bot should always be one step ahead of the user. For example, the bot should state which topics it covers when greeting the user, as below:\\
+
+{\fontfamily{qcr} \selectfont
+
+  \color{blue}
+  \textbf{Bot}: I can help you to book a table, select menu and pay online..\\
+ 
+  \color{black}
+}
+
+This guiding is helpful and will result in one of the provided options being selected by the user. We need to understand what motivates us within a conversation and how can this be programmed into chatbots behaviour. Personality in chatbot is the new UX within conversational UIs \cite{fadhil2018}. Bot personality have to reflect the specific domain it is employing. For example, if we have a bot to take pizza orders, then one possible personality reflection could be that a significant number of people are asking for Pizza flavors not available. In this case, the bot has to provide clever responses that also progresses the conversation, instead of falling into a dead-end, as illustrated below:\\
+
+{\fontfamily{qcr} \selectfont
+
+  \color{red}
+  \textbf{Chatter Bot}: You can select pizza pepperoni, pizza margherita and pizza with veggies. What is your choice?\\
+  
+  \color{blue}
+  \textbf{Customer}: I want pizza pepperoni\\
+  
+  \color{red}
+  \textbf{Chatter Bot}:  1 pizza pepperoni, cool, now tell me the size (small, medium, large)?\\
+  
+  \color{black}
+}
+
+
+\paragraph{Flexibility in Response}
+The bot should provide flexible values to various user requests. To illustrate, providing different error messages as response to the same question arose by the user. Moreover, the bot should cover irregular cases, such as a keyword related to another branch of the decision tree or a completely irrelevant keyword to the context. For instance, asking about a service before getting confirmation of success during a payment and causing early termination. If the user asks a random question or tricks the bot with unrelated questions, then it is critical that the bot doesn’t repeat itself with a response such as:
+
+{\fontfamily{qcr} \selectfont
+
+  \color{red}
+  \textbf{Chatter Bot}: Bot: Sorry I didn’t understand\\
+  
+  \color{black}
+}
+
+If the bot continues to provide no information on alternate course of action, then the probability a user will leave the bot is very high. A best strategy is to play with multiple types of response or error messages and see what gets the best response from your user by focusing on a humorous or satirical approach to the problem. More importantly, provide different error messages for specific errors that occurs in a conversation \cite{fadhil2018}. If the error occurs when the user is asked to provide some information, such as their address, then the bot could respond:\\
+
+{\fontfamily{qcr} \selectfont
+
+  \color{red}
+  \textbf{Chatter Bot}:  Sorry I’m still learning, try formatting your address 6500 Park Avenue, Hoboken, NJ 11211\\
+  
+  \color{black}
+}
+
+\paragraph{Text vs Custom Buttons}
+Users shouldn’t be placed in a situation where they have to guess the correct information required to proceed. Moreover, the bot should support a dictionary databased for synonyms so to yield the same result for vocabularies, such as "buy" and "purchase" or "client" and "customer". Custom keyboards or buttons permit a limited range of inputs and can save a bunch of typing. To illustrate, rather than asking end user to type “Yes” or “No” text, the bot can present them with two mutually exclusive buttons. Moreover, the bot can validate structured text link email address before sending. This way allows the bot to keep responses on track and sidestep the complications of parsing unpredictable plain text input \cite{khan2018}. They bot should never leave the user clueless in case of unrecognised questions and provide a fallback response to guide user as to what the next step might be. For example, provide the main topics from the content domain available. Rather than just using free text NLP communication with the bot, a proper UI should present options to the user to guide them through a decision making process. For instance, if the user is checking for a jacket, the interface can suggest a few of the company’s latest styles and similar items, as given below.\\
+
+{\fontfamily{qcr} \selectfont
+
+  \color{blue}
+  \textbf{Customer}:  I want to buy a snow jacket \\
+  
+  \color{red}
+  \textbf{Chatter Bot}:   We have item1, item2, item3\\
+  
+  \color{black}
+}
+
+\paragraph{Simplicity in Interaction}
+Beyond the seemingly human aspect of communicating in the right tone and predicting and learning the user through a task, an additional reason CUI will work well in domains, such as healthcare is their simplicity. Conversational interfaces has to be bounded to particular subjects and follow a linear conversation routes \cite{bers1998}. Users often are looking for a service that finds them the answer with no extra effort. Therefore, individual designers should avoid complicated branching paths and shouldn't have to account for tricky failure cases. Moreover, utilizing auto-complete whenever possible and suggesting questions with the same wording are both effective to steer and inform users. This will shorten typing effort, since users can select one for the items in the auto-complete list \cite{khan2018}.
+
+\paragraph{Conversation Flow}
+Question and answer conversational interfaces are not the most effective way of getting answers from a bot, no matter how intelligent they are. For example, when ordering a food through a bot and when user isn't sure what to order, then they have to go through a conversation with the bot to figure out what to order. The conversation path becomes important, since it can help figure out how the conversation flow should be designed. Moreover, if the user can’t find answer to his question, it makes sense to add an option for the user to provide a feedback to save user question. The point is to prevent user from getting frustrated and provide a guidance instead of repeatedly saying "Sorry, I did not understand that"
+
+\paragraph{Tasks and Duty Specifications}
+Starting with rigid syntax, then introducing NLP is a best practice to start with when designing CUI \cite{fadhil2018}. The issue with NLP is that even if it supports complex conversation and gets the sentences right in most cases, it will fail in the remaining sentences in a very predictable way. Even if the bot provides fun error messages and smart responses to various user questions, this failing might lead to user frustration. NLP is perhaps the biggest bottleneck when designing CUIs. Humans always do spelling, grammar or typo mistakes. In addition, users often use slang and nuance to express something which can make any NLP based system to struggle. In fact, some services rely on employees to manage their conversation UI. NLP is effective in specific tasks, it is tedious to type and error prone. Therefore, focusing on creating a good UI is more important than a complex NLP. There are a number of ways in which NLP falls short of the requirements for a good UX by comparison with traditional UIs. For one thing, people are lazy and it feels easier to click a button, as we do on apps and websites, than typing out the whole sentence that the bot may will not understand. In addition, people easily fall into typo mistakes and the text they input may be full of grammar and spelling mistakes. This will result in user frustration with the bot in the long-term, since it can't understand their demands. Even worse, it may do the opposite of what it was asked for.
+
+
+\paragraph{Empathy and Emotional State}
+One of the pillar in CUI design patterns is to consider building an empathy with the user. All the design should be approached with empathy, in fact, many conversational interfaces integrate pauses, humans take a second to type an answer, so it makes sense to build a typing indicator for a bot. Addressing a social issue requires emotional sensitivity, a critical skill that bots are universally missing. Bots have to present some aspects of emotional state changes (fear, anger, sadness, etc.). In this regard, LawBot \cite{lawbot} which is a legal bot created by Cambridge University students to help users understand the complexities of the law and identify whether a crime has been committed. The bot is used to report sexual harassment, injuries and assaults, and property disputes. However, the bot relies on strict role based checklist to assess if a crime has been committed. If the user reports sexual harassment, and it doesn't fit within present criteria, the bot response with the following:\\
+
+{\fontfamily{qcr} \selectfont
+
+  \color{red}
+  \textbf{Chatter Bot}:  I don’t think a sex offence was committed here. Say "Crime" for a list of what I can help you with.\\
+  
+  \color{black}
+}
+
+Despite good intentions, the emotionally insensitive LawBot quickly dismisses sexual harassment if the harassment does not fit within a narrow set of legal technicalities. The results can be counterproductive and further discourage victims to speak up.
+
+
+\paragraph{Keep Conversation Short}
+Human-bot interaction should be short and precise \cite{fadhil2018}. Introducing a protracted back and forth conversation will make it feel laborious and hard to interact with the bot. Instead, bots have to serve specific tasks and intend for specific domains, in other words, personalized for a specific purposes. Unlike, graphic interface that defines rules for each interaction which often frustrate users, conversational interface has to be liberating in their familiarity.
+
+\paragraph{Fully/Partially Automated}
+Before introducing any functionalities into the bot, one should ask themselves whether a human will be better for the end user or a bot will deliver a more effective service. Bots are not to replace what humans are good at, rather they should improve what humans are slow at. As much advanced in Machine Learning and AI are going to help with automation where it makes sense, it is also true that we will absolutely need a human being in the loop to create the right end-to-end customer experience. It is a good practice to start with real humans, doing 100\% of the work, then, introduce role-based hierarchical tree. Only after that, introducing NLP to automate the 10\% of the most common tasks \cite{fadhil2018}. As an example, introducing NLP to the most frequently asked questions or just for the on-boarding. At later stages, especially when we have enough dialogue data, then we can move up and introduce more automation and intelligent machine learning techniques. This strategy applies when the value of the bot is in the human expert \cite{khan2018}.
+
+\paragraph{Provide a Way Out}
+Humans make mistakes, therefore, bot users should always be able to start over, make changes, or completely escape when a mistake occurs. Sometimes, humans get into a conversation without a correct established base facts. However, when it becomes clear that the other party is lost, we start over or stop the conversation, bots should do the same.\\
+
+{\fontfamily{qcr} \selectfont
+ 
+  \color{red}
+  \textbf{Chatter Bot}: Would you like to order pizza? \\
+  
+  \color{blue}
+  \textbf{Customer}: I am not sure what to eat tonight \\
+ 
+  \color{red}
+  \textbf{Chatter Bot}: How about a list of available restaurants to order from? \\
+  
+  \color{black}
+}
+
+
+
+% \section{Personalization}
+
+% Chapter 2 discusses several studies in the literature that try to solve problems related to the task in this dissertation. These studies can be roughly classified into three groups: the syntactic approach, the stochastic approach, and the semantic approach. Stochastic approaches use statistical frameworks like Bayesian theory, Hidden Markov models, and n-gram modeling to construct individual sentences. Syntactic approaches use techniques from natural language processing and computational linguistics to parse and model grammatical constructs of conversations. Semantic approaches use models of meaning from a knowledge structure to drive sentence analysis and construction. The most representative studies in each approach are described here in detail. As with most research, studies under all three umbrellas heavily leverage ideas from each other.
+
+
+
+
+% \section{The Stochastic Approach}
+
+% The earliest formal architecture designed for conversations was the Bayesian Receptionist at Microsoft Inc \cite{horvitz2000}. The system maintained a domain of dialogues about goals typically handled by receptionists at the front desks of the buildings on the Microsoft corporate campus. The system employed a set of Bayesian user models to interpret the goals of speakers given evidence gleaned from a natural language parse of their utterances. Beyond linguistic features, the domain models took contextual evidence into consideration, including visual findings.
+
+% The 3-level task abstraction hierarchy was the key feature of the system. Each level modeled a different level of abstraction. Level 0, the highest level of abstraction, modeled the task of discriminating the high-level goal of the user, given initial observations and an initial utterance. Level 1, the next lower level of abstraction, modeled the refinement of the high-level goals into more specific goals. Level 2, the lowest level of abstraction, modeled additional conditions for specific situational cases. Levels more detailed than the highest level included an additional state representing the proposition that the current level is inappropriate.
+
+% Inference about the belief assigned to each state was used to control backtracking in conversation. Decomposition of a user’s goals into several levels of detail allowed for guiding conversation on a natural path of convergence toward shared understanding at progressively greater levels of detail. Multiple levels also allowed for the establishment of common ground \cite{clark1996} about uncertainties at each level. It
+% also allowed conversation regarding comprehension of misunderstandings before progressing
+% to the next level of detail.
+
+% In the Microsoft system, users could be directed, as part of a natural dialog about their goals, to implicitly or explicitly confirm or disconfirm misunderstanding at each level. This lead to reduction of uncertainty to some tolerable level before progressing to the next level. The limitation of this model was that it scaled poorly. It was unable to model any conversation beyond asking for direction. But, it also introduced some important ideas about leveraging probabilistic methods for inferencing at different levels of abstraction.
+
+% Paek and Horovitz \cite{paek2000} then demonstrated how conversations could be modeled as an inference and decision making problem under uncertainty. They designed Quartet, a task independent, multimodal architecture for supporting robust continuous spoken dialog. Their model had four levels of independent analysis. A channel level established mere exchange of utterances. A signal level established intent. An intention level which modeled semantics of the conversation. Finally a conversation level, modeled a tangible activity or behavior based on the conversation.
+
+% The Paek and Horovitz model also included learning the parameters of the inference model using an expectation maximization type algorithm. The architecture maintained a probability distribution function over communication failure modes, and minimized this failure function at each level. One limitation of this model was that it relied on ad hoc policies to deal with failures at each level, and these policies had to be designed independently for every class of conversations.
+
+% Li and Ji \cite{li2005} used a probabilistic framework based on dynamic Bayesian networks to model an user’s affective states. Although they model general behaviors, not conversations, they were one of the earlier works that introduced the concept of state-based modeling for human behavior. They systematically modeled the uncertainty, dynamics, and different types of knowledge associated with user affective state using DBNs. They demonstrated an information-theoretic mechanism to perform active behavior learning. They also demonstrated user affective state inference in a timely and efficient manner, and proposed information-theoretic criteria to optimally determine when and what assistance to provide to maximize the chance for returning the user to its normal state while minimizing interference with the user’s workload and annoyance. The main contribution lies in the integration of the proposed active sensing mechanism into the DBN-based framework for user state inference and user assistance.
+
+% Mishne et al. \cite{mishne2005} introduced a novel method of estimating the domain-specific importance of conversation fragments from call center telephone calls, based on divergence of corpus statistics. The main novelty of their system was a method for identifying the domain-specific importance levels of fragments in the call, and usage of this method for retrieving possible solutions to the problem presented in the conversation, and for detecting abuse of the call-center resources. A simple way of estimating the significance level of a fragment of a call is to estimate the significance level of each word in the fragment and combine these individual values. In most text analysis systems, the significance of words is inversely related to their frequency. The more common a word is, the less significance it has. Estimating the significance level of a word requires an evaluation of how characteristic the word is to a specific domain, compared to other domains. Rather than global significance, they actually estimated domain-specific word significance (and hence, domain-specific fragment significance). They also used manually transcribed data for validating their results.
+
+% Ozyurt and Kose \cite{ozyurt2010} used Naive Bayes, k-nearest neighbor, and support vector machines to automatically mine chat conversation topics in Turkish language call center conversations. Threads and endings of the topics were determined by making analysis at the sentence level rather than the conversation level. They used a Dirichlet prior distribution to initially model the distribution of topics across each sentence, and then support vector machines to learn their final distributions.
+
+% Douglas et al. \cite{douglas2005} designed a tool for mining customer care chats for news items of importance. Relevant business and dialog features were extracted from the speech logs of caller-system interactions and tracked by a trend analysis algorithm. Features that moved outside their expected bounds on a given day generated headlines as part of a web site generated completely automatically from each day’s logs.
+
+
+
+
+
+
+% \section{The Syntactic Approach}
+
+% Many researchers have tried to solve the specific problem of mining and modeling conversations in the context of customer service agents using a variety of cookbook techniques.
+
+% Takeuchi et al. \cite{takeuchi2007}, designed a method to analyze transcripts of conversations between customers and human agents at a service center. Their aim was to obtain actionable insights from the conversations to improve agent performance using a three step approach. First, they segmented the call into logical parts. Next they extracted relevant phrases within different segments. Finally, they performed 2-dimensional association analysis to identify actionable trends. They used real conversational data from a service center to identify specific actions by agents that resulted in positive outcomes. They showed that associations between agent utterances and outcomes could be found by segmenting the calls and aggregating phrases within the call segments. In particular they analyzed calls to answer some of the key questions faced by question-answers with the objective of improving agent productivity.
+
+% In subsequent work, Takeuchi et al. \cite{takeuchi2007conversation} argued that the language patterns in the final stages of electronic negotiations are more indicative of the outcomes, whereas in face-to-face negotiations the initial stages of the negotiations are more useful for predicting the outcome.
+
+% Roy and Venkata. \cite{roy2006} used unsupervised learning algorithms to generate domain models automatically from telephone conversation transcriptions. Their domain model was comprised primarily of a topic taxonomy where every node was characterized by topics, typical questions and answers, typical actions, and call statistics. This hierarchical domain model contained summarized topic specific details for topics of different granularity. However they did not use any semantic features in their taxonomy.
+
+
+
+
+
+% \section{The Semantic Approach}
+
+% Chai et al. \cite{chai2005} introduced a fine-grained semantic model that characterized the meanings of user inputs and the overall conversation from multiple dimensions for unified multi-modal input understanding. They also realized discourse interpretation through an integrated interpretation approach that identified the semantics of user inputs and the overall conversation using a wide variety of contexts. They achieved a 90\% accuracy in recognizing the meaning of user input. However the interpretation rules were manually contracted for the models. The rules had to handcrafted each time for different domains, and as a result scaled poorly.
+
+% Mehta and Corradini \cite{mehta2007} demonstrated the representational power of ontologies for a spoken dialog system. Their system focused on the categorization of ontological resources in to domain independent, and domain specific components. These domains were leveraged to augment the agents conversational capabilities and enhance the systems reusability across conversational domains. They leveraged Google directory categorization for a semi-automatic understanding of a user utterance on general purpose topics like movies and games.
+
