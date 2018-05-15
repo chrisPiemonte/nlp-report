@@ -123,7 +123,7 @@ According to McTear et al. \cite{mctear2016} a conversational chatbot interface 
 	\centering
 	\includegraphics[width = 100mm]{chatbot-history}
 	\caption{History of chatbots.}
-	\label{personal-info}
+	\label{chatbot-history}
 \end{figure}
 
 % \subsection{Rule-Based Bots}
@@ -160,33 +160,41 @@ Most chatbots are general purpose, i.e., they attempt to hold open conversations
 within the domain, beyond scope denoting non-specific open-ended conversations
 within the domain, and Beyond domain denoting conversations beyond the domain
 being considered \cite{chakrabarti2015}.}
-	\label{personal-info}
+	\label{classes-of-conversations}
 \end{figure}
 
-Consider a snippet of conversation with a customer service chatter bot that helps customers solve account access issues. In this exchange, the customer is unable to login to an account, and seeks assistance \cite{chakrabarti2015}.\\
+Consider a snippet of conversation with a customer service chatter bot that helps customers solve account access issues. In this exchange, the customer is unable to login to an account, and seeks assistance \cite{chakrabarti2015}.
+  \bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{red}
-  \textbf{Chatter Bot}: Hello. How can I help you today ?\\
+  \textbf{Chatter Bot}: Hello. How can I help you today ?
+  \bigskip
   
   \color{blue}
-  \textbf{Customer}: I am unable to login to my account. I forgot my password.\\
+  \textbf{Customer}: I am unable to login to my account. I forgot my password.
+  \bigskip
   
   \color{red}
-  \textbf{Chatter Bot}: Please click on the "Forgot Password" link. You will be emailed a link that will help you change your password.\\
+  \textbf{Chatter Bot}: Please click on the "Forgot Password" link. You will be emailed a link that will help you change your password.
+  \bigskip
   
   \color{blue}
-  \textbf{Customer}: I already tried that. That link takes me to a form to reset password. But it requires me to enter my Customer Relationship Number. I do not have this number.\\
+  \textbf{Customer}: I already tried that. That link takes me to a form to reset password. But it requires me to enter my Customer Relationship Number. I do not have this number.
+  \bigskip
   
   \color{red}
-  \textbf{Chatter Bot}: The Customer Relationship Number can be found in the "Account Information" tab when you log in to your account.\\
+  \textbf{Chatter Bot}: The Customer Relationship Number can be found in the "Account Information" tab when you log in to your account.
+  \bigskip
   
   \color{blue}
-  \textbf{Customer}: But I am unable to login to my account. I do not remember my password.\\
+  \textbf{Customer}: But I am unable to login to my account. I do not remember my password.
+  \bigskip
   
   \color{red}
-  \textbf{Chatter Bot}: Please click on the "Forgot Password" link. You will be emailed a link that will help you change your password.\\
+  \textbf{Chatter Bot}: Please click on the "Forgot Password" link. You will be emailed a link that will help you change your password.
+  \bigskip
   
   \color{black}
 }
@@ -194,10 +202,5 @@ Consider a snippet of conversation with a customer service chatter bot that help
 To a human representative, it would be clear that this conversation is not helping address the customer’s issue. However, since chatter bots are programmed through pattern-template pairs, they are more suited for question-answer type exchanges, where there is a sequence of several question-answer pairs. They are unable to hold a longer conversation, understand the conversation, gauge whether the conversation is going in the desired direction, and act on it. In the above example, we expect the chatter bot to recognize the deadlock situation for the customer and to resolve it, or transfer the conversation to a human representative if the solution is beyond its programmatic capabilities.
 
 It is clear from the example that the conversational performance of these chatter bots does not live up to what we would expect from a human customer service agent. Hence, there is clearly an opportunity to improve their conversational ability. In addition, since chatter bots cannot actually follow a longer conversation, they are also incapable of spotting opportunities in a conversation for providing unsolicited but pertinent information.
-% * <siciliani.lu@gmail.com> 2018-04-06T16:09:16.543Z:
-% 
-% > t
-% It
-% 
-% ^.
+
 

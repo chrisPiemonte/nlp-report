@@ -92,7 +92,7 @@ Incremental processing is an important process in human to human conversation. I
 
 \section{Dialogue Management Strategy} %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-McTear \cite{mctear2016} describes that one of the core aspects of conversational interfaces is the design of the dialogue management strategy, in which the system’s conversational behaviour is defined. The design of dialogue management strategy was done manually in the past, but the research community has found ways to automate this process by training the model with real conversations (McTear et al., 2016). Two arising design strategies of dialogues in chatbots are the interaction strategy and the choice of a confirmation strategy (McTear et al., 2016). Automatic speech recognition is not always accurate, but by asking the user for confirmation or reprompt them, some errors could be avoided. Too many confirmation asking can also be annoying. There are three types of interaction strategies in chatbots, namely: user-initiated, system-initiated or mixed initiative. Limitations of user-initiated dialogues are errors in speech recognition and understanding, since users can say anything they want. The limitation of system-initiated dialogues, is that the user’s input is limited, but the advantage is that the interaction is more efficient. 
+McTear \cite{mctear2016} describes that one of the core aspects of conversational interfaces is the design of the dialogue management strategy, in which the system’s conversational behaviour is defined. The design of dialogue management strategy was done manually in the past, but the research community has found ways to automate this process by training the model with real conversations. Two arising design strategies of dialogues in chatbots are the interaction strategy and the choice of a confirmation strategy. Automatic speech recognition is not always accurate, but by asking the user for confirmation or reprompt them, some errors could be avoided. Too many confirmation asking can also be annoying. There are three types of interaction strategies in chatbots, namely: user-initiated, system-initiated or mixed initiative. Limitations of user-initiated dialogues are errors in speech recognition and understanding, since users can say anything they want. The limitation of system-initiated dialogues, is that the user’s input is limited, but the advantage is that the interaction is more efficient. 
 
 The advantage of a mixed-initiated dialogue is that the system can guide the user, but the user is also free to say anything he wants and take initiative, ask questions and introduce new topics. The limitations are that the system has to be technically advanced to keep track of his own structure/agenda, understand and answer the user’s utterances correctly and remember the relevant information said. Confirmation strategies are strategies to prevent errors in recognition and understanding of the user’s utterances. The disadvantage of using these confirmations is that it can make the interaction inefficient, repetitive and lengthy which can eventually lead to a frustrating user experience. 
 
@@ -103,64 +103,77 @@ A solution for these problems, is to create implicit confirmations. In this way,
 \section{Guidelines} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{Personality by design}
-The chatbot personality is what gives the feeling of a natural conversation with an individual and comfort in the conversation. Designing the appropriate personality can increase the user experience and engagement with the bot. Personality is the tone the bot takes in a conversation. For example, if the bot is intended for ecommerce, then the bot personality should cover features, such as understanding the context of the conversation, is the user browsing or looking for specific information. Moreover, personality also includes knowing what the user might ask for and what the bot can’t offer. There is no one-size-fits-all approach when it comes to designing the correct conversation flow and currently there are no patterns that work for all cases. Most bots lack the structure to steer a conversation from the beginning to the end. Bots personality has to defines steps to guide user to learn and manage their intention. The bot should always be one step ahead of the user. For example, the bot should state which topics it covers when greeting the user, as below:\\
+The chatbot personality is what gives the feeling of a natural conversation with an individual and comfort in the conversation. Designing the appropriate personality can increase the user experience and engagement with the bot. Personality is the tone the bot takes in a conversation. For example, if the bot is intended for e-commerce, then the bot personality should cover features, such as understanding the context of the conversation, is the user browsing or looking for specific information. Moreover, personality also includes knowing what the user might ask for and what the bot can’t offer. There is no one-size-fits-all approach when it comes to designing the correct conversation flow and currently there are no patterns that work for all cases. Most bots lack the structure to steer a conversation from the beginning to the end. Bots personality has to defines steps to guide user to learn and manage their intention. The bot should always be one step ahead of the user. For example, the bot should state which topics it covers when greeting the user, as below:
+\bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{blue}
-  \textbf{Bot}: I can help you to book a table, select menu and pay online..\\
+  \textbf{Bot}: I can help you to book a table, select menu and pay online..
+  \bigskip
  
   \color{black}
 }
 
-This guiding is helpful and will result in one of the provided options being selected by the user. We need to understand what motivates us within a conversation and how can this be programmed into chatbots behaviour. Personality in chatbot is the new UX within conversational UIs \cite{fadhil2018}. Bot personality have to reflect the specific domain it is employing. For example, if we have a bot to take pizza orders, then one possible personality reflection could be that a significant number of people are asking for Pizza flavors not available. In this case, the bot has to provide clever responses that also progresses the conversation, instead of falling into a dead-end, as illustrated below:\\
+This guiding is helpful and will result in one of the provided options being selected by the user. We need to understand what motivates us within a conversation and how can this be programmed into chatbots behaviour. Personality in chatbot is the new UX within conversational UIs \cite{fadhil2018}. Bot personality have to reflect the specific domain it is employing. For example, if we have a bot to take pizza orders, then one possible personality reflection could be that a significant number of people are asking for Pizza flavors not available. In this case, the bot has to provide clever responses that also progresses the conversation, instead of falling into a dead-end, as illustrated below:
+\bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{red}
-  \textbf{Chatter Bot}: You can select pizza pepperoni, pizza margherita and pizza with veggies. What is your choice?\\
+  \textbf{Chatter Bot}: You can select pizza pepperoni, pizza margherita and pizza with veggies. What is your choice?
+  \bigskip
   
   \color{blue}
-  \textbf{Customer}: I want pizza pepperoni\\
+  \textbf{Customer}: I want pizza pepperoni
+  \bigskip
   
   \color{red}
-  \textbf{Chatter Bot}:  1 pizza pepperoni, cool, now tell me the size (small, medium, large)?\\
+  \textbf{Chatter Bot}:  1 pizza pepperoni, cool, now tell me the size (small, medium, large)?
+  \bigskip
   
   \color{black}
 }
 
 
 \paragraph{Flexibility in Response}
-The bot should provide flexible values to various user requests. To illustrate, providing different error messages as response to the same question arose by the user. Moreover, the bot should cover irregular cases, such as a keyword related to another branch of the decision tree or a completely irrelevant keyword to the context. For instance, asking about a service before getting confirmation of success during a payment and causing early termination. If the user asks a random question or tricks the bot with unrelated questions, then it is critical that the bot doesn’t repeat itself with a response such as:
+The bot should provide flexible values to various user requests. To illustrate, providing different error messages as response to the same question arose by the user. Moreover, the bot should cover irregular cases, such as a keyword related to another branch of the decision tree or a completely irrelevant keyword to the context. For instance, asking about a service before getting confirmation of success during a payment and causing early termination. If the user asks a random question or tricks the bot with unrelated questions, then it is critical that the bot doesn not repeat itself with a response such as:
+\bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{red}
-  \textbf{Chatter Bot}: Bot: Sorry I didn’t understand\\
+  \textbf{Chatter Bot}: Bot: Sorry I didn’t understand
+  \bigskip
   
   \color{black}
 }
 
-If the bot continues to provide no information on alternate course of action, then the probability a user will leave the bot is very high. A best strategy is to play with multiple types of response or error messages and see what gets the best response from your user by focusing on a humorous or satirical approach to the problem. More importantly, provide different error messages for specific errors that occurs in a conversation \cite{fadhil2018}. If the error occurs when the user is asked to provide some information, such as their address, then the bot could respond:\\
+If the bot continues to provide no information on alternate course of action, then the probability a user will leave the bot is very high. A best strategy is to play with multiple types of response or error messages and see what gets the best response from your user by focusing on a humorous or satirical approach to the problem. More importantly, provide different error messages for specific errors that occurs in a conversation \cite{fadhil2018}. If the error occurs when the user is asked to provide some information, such as their address, then the bot could respond:
+\bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{red}
-  \textbf{Chatter Bot}:  Sorry I’m still learning, try formatting your address 6500 Park Avenue, Hoboken, NJ 11211\\
+  \textbf{Chatter Bot}:  Sorry I’m still learning, try formatting your address 6500 Park Avenue, Hoboken, NJ 11211
+  \bigskip
   
   \color{black}
 }
 
 \paragraph{Text vs Custom Buttons}
-Users shouldn’t be placed in a situation where they have to guess the correct information required to proceed. Moreover, the bot should support a dictionary databased for synonyms so to yield the same result for vocabularies, such as "buy" and "purchase" or "client" and "customer". Custom keyboards or buttons permit a limited range of inputs and can save a bunch of typing. To illustrate, rather than asking end user to type “Yes” or “No” text, the bot can present them with two mutually exclusive buttons. Moreover, the bot can validate structured text link email address before sending. This way allows the bot to keep responses on track and sidestep the complications of parsing unpredictable plain text input \cite{khan2018}. They bot should never leave the user clueless in case of unrecognised questions and provide a fallback response to guide user as to what the next step might be. For example, provide the main topics from the content domain available. Rather than just using free text NLP communication with the bot, a proper UI should present options to the user to guide them through a decision making process. For instance, if the user is checking for a jacket, the interface can suggest a few of the company’s latest styles and similar items, as given below.\\
+Users shouldn’t be placed in a situation where they have to guess the correct information required to proceed. Moreover, the bot should support a dictionary databased for synonyms so to yield the same result for vocabularies, such as "buy" and "purchase" or "client" and "customer". Custom keyboards or buttons permit a limited range of inputs and can save a bunch of typing. To illustrate, rather than asking end user to type “Yes” or “No” text, the bot can present them with two mutually exclusive buttons. Moreover, the bot can validate structured text link email address before sending. This way allows the bot to keep responses on track and sidestep the complications of parsing unpredictable plain text input \cite{khan2018}. They bot should never leave the user clueless in case of unrecognised questions and provide a fallback response to guide user as to what the next step might be. For example, provide the main topics from the content domain available. Rather than just using free text NLP communication with the bot, a proper UI should present options to the user to guide them through a decision making process. For instance, if the user is checking for a jacket, the interface can suggest a few of the company’s latest styles and similar items, as given below.
+\bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{blue}
-  \textbf{Customer}:  I want to buy a snow jacket \\
+  \textbf{Customer}: I want to buy a snow jacket
+  \bigskip
   
   \color{red}
-  \textbf{Chatter Bot}:   We have item1, item2, item3\\
+  \textbf{Chatter Bot}: We have item1, item2, item3
+  \bigskip
   
   \color{black}
 }
@@ -176,12 +189,14 @@ Starting with rigid syntax, then introducing NLP is a best practice to start wit
 
 
 \paragraph{Empathy and Emotional State}
-One of the pillar in CUI design patterns is to consider building an empathy with the user. All the design should be approached with empathy, in fact, many conversational interfaces integrate pauses, humans take a second to type an answer, so it makes sense to build a typing indicator for a bot. Addressing a social issue requires emotional sensitivity, a critical skill that bots are universally missing. Bots have to present some aspects of emotional state changes (fear, anger, sadness, etc.). In this regard, LawBot \cite{lawbot} which is a legal bot created by Cambridge University students to help users understand the complexities of the law and identify whether a crime has been committed. The bot is used to report sexual harassment, injuries and assaults, and property disputes. However, the bot relies on strict role based checklist to assess if a crime has been committed. If the user reports sexual harassment, and it doesn't fit within present criteria, the bot response with the following:\\
+One of the pillar in CUI design patterns is to consider building an empathy with the user. All the design should be approached with empathy, in fact, many conversational interfaces integrate pauses, humans take a second to type an answer, so it makes sense to build a typing indicator for a bot. Addressing a social issue requires emotional sensitivity, a critical skill that bots are universally missing. Bots have to present some aspects of emotional state changes (fear, anger, sadness, etc.). In this regard, LawBot \cite{lawbot} which is a legal bot created by Cambridge University students to help users understand the complexities of the law and identify whether a crime has been committed. The bot is used to report sexual harassment, injuries and assaults, and property disputes. However, the bot relies on strict role based checklist to assess if a crime has been committed. If the user reports sexual harassment, and it doesn't fit within present criteria, the bot response with the following:
+\bigskip
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
 
   \color{red}
-  \textbf{Chatter Bot}:  I don’t think a sex offence was committed here. Say "Crime" for a list of what I can help you with.\\
+  \textbf{Chatter Bot}:  I don’t think a sex offence was committed here. Say "Crime" for a list of what I can help you with.
+  \bigskip
   
   \color{black}
 }
@@ -198,16 +213,18 @@ Before introducing any functionalities into the bot, one should ask themselves w
 \paragraph{Provide a Way Out}
 Humans make mistakes, therefore, bot users should always be able to start over, make changes, or completely escape when a mistake occurs. Sometimes, humans get into a conversation without a correct established base facts. However, when it becomes clear that the other party is lost, we start over or stop the conversation, bots should do the same.\\
 
-{\fontfamily{qcr} \selectfont
+{\fontfamily{cmss} \selectfont
  
   \color{red}
-  \textbf{Chatter Bot}: Would you like to order pizza? \\
+  \textbf{Chatter Bot}: Would you like to order pizza? 
+  \bigskip
   
   \color{blue}
-  \textbf{Customer}: I am not sure what to eat tonight \\
- 
+  \textbf{Customer}: I am not sure what to eat tonight 
+  \bigskip
+  
   \color{red}
-  \textbf{Chatter Bot}: How about a list of available restaurants to order from? \\
+  \textbf{Chatter Bot}: How about a list of available restaurants to order from?
   
   \color{black}
 }

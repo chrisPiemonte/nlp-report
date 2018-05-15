@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,oneside]{book}
+\documentclass[a4paper,12pt,twoside]{book}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage[font = scriptsize, bf]{caption}
@@ -24,8 +24,8 @@
 
 
 % Sistema i margini per lasciare più spazio di rilegatura
-\addtolength{\oddsidemargin}{+1,0cm} 
-\addtolength{\evensidemargin}{+1,0cm} 
+\addtolength{\oddsidemargin}{+1,3cm} 
+\addtolength{\evensidemargin}{-1,3cm} 
 \onehalfspacing
 
 % Imposta lo stile della prima pagina del capitolo
@@ -54,10 +54,10 @@
 % frontespizio
 \begin{frontespizio}
   \Istituzione{University of Bari ``Aldo Moro''}
-  \Logo[3.5cm]{Immagini/logo_uni}
+  \Logo[3.5cm]{Immagini/logo_uni.jpeg}
   \Divisione{Department of Computer Science}
   \Scuola{Master's Degree in Computer Science}
-  \Titolo{Analisi dello stato dell’arte dell’utilizzo di interfacce in linguaggio naturale per migliorare la \\User eXperience (UX) in ambito finanziario}
+  \Titolo{Analysis of the state of the art on using natural interfaces to improve the user experience (UX) in the financial field}
   \Sottotitolo{AIINLP}
   \NCandidato{Student}
   \Candidato{Christopher Piemonte}
@@ -66,9 +66,13 @@
   \Relatore{Fedelucio Narducci}
   \Piede{Academic year 2016-2017}
 \end{frontespizio}
-\IfFileExists{Tesi-frn.pdf}{}{%
-	\immediate\write18{pdflatex Tesi-frn}
-}
+
+% \IfFileExists{Tesi-frn.pdf}{}{%
+% 	\immediate\write18{pdflatex Tesi-frn}
+% }
+
+\IfFileExists{\jobname-frn.pdf}{}{%
+\immediate\write18{pdflatex \jobname-frn}}
 
 \pagestyle{fancy}
 \fancyfoot{}
@@ -112,7 +116,7 @@
 
 \chapter{Critical analysis}
 \label{cap:capitolo4}
-\input{Capitoli/Capitolo4}
+\input{Capitoli/Conclusione}
 
 
 % \chapter{Critical analysis}
